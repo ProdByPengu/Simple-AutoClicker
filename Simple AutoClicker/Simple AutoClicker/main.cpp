@@ -4,7 +4,7 @@
 #include <chrono>
 
 static int left_cps = 12;
-POINT pos{ 0, 0 };
+static POINT pos{ 0, 0 };
 
 void mouse_up( ) {
     std::this_thread::sleep_for( std::chrono::milliseconds( ( 1000 / left_cps ) / 2 ) );
