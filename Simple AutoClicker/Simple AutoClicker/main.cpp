@@ -35,5 +35,8 @@ int main( ) {
         if ( GetAsyncKeyState( VK_LBUTTON ) & 0x8000 ) {
             mouse_down( );
         }
+        else {
+            std::this_thread::sleep_for( std::chrono::milliseconds( 5 ) );
+        }
     }
 }
