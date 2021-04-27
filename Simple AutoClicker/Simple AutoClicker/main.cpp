@@ -6,7 +6,7 @@
 static int left_cps = 12;
 static POINT pos{ 0, 0 };
 
-void mouse_up( ) {
+auto mouse_up( ) -> void {
     std::this_thread::sleep_for( std::chrono::milliseconds( ( 1000 / left_cps ) / 2 ) );
 
     SendMessageA (
@@ -17,7 +17,7 @@ void mouse_up( ) {
     );
 }
 
-void mouse_down( ) {
+auto mouse_down( ) -> void {
     std::this_thread::sleep_for( std::chrono::milliseconds( ( 1000 / left_cps ) / 2 ) );
 
     SendMessageA (
@@ -30,7 +30,7 @@ void mouse_down( ) {
     mouse_up( );
 }
 
-int main( ) {
+auto main( ) -> int {
     while ( true ) {
         if ( GetAsyncKeyState( VK_LBUTTON ) & 0x8000 ) {
             mouse_down( );
